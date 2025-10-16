@@ -1,7 +1,7 @@
 {
   "name": "synapse-sparksql-renderer",
   "displayName": "Synapse SparkSQL Result Renderer",
-  "version": "0.0.1",
+  "version": "0.1",
   "publisher": "Alexander Sigurdsson",
   "engines": {
     "vscode": "^1.82.0"
