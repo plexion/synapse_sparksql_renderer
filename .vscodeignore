@@ -1,0 +1,10 @@
+# .vscodeignore
+node_modules/
+src/
+*.ts
+*.map
+.vscode/
+.git/
+.gitignore
+README.md
+package-lock.json
