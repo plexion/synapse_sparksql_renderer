@@ -83,7 +83,7 @@ Contributions are welcome! To contribute raise an issue, or:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [MIT License](https://github.com/plexion/synapse-sparksql-renderer/blob/main/LICENSE) for details.
 
 ## Acknowledgments
 

@@ -6,6 +6,7 @@
   "engines": {
     "vscode": "^1.82.0"
   },
+  "homepage": "https://github.com/plexion/synapse-sparksql-renderer",
   "repository": {
     "type": "git",
     "url": "https://github.com/plexion/synapse-sparksql-renderer.git"
