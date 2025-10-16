@@ -1,0 +1,48 @@
+name: Build & Release VS Code Extension
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags
+
+permissions:
+  contents: write  # required to upload assets to the release
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Install vsce globally
+        run: npm install -g @vscode/vsce
+
+      - name: Package VS Code Extension
+        run: vsce package
+
+      - name: Get packaged file name
+        id: get_filename
+        run: |
+          FILE=$(ls *.vsix | head -n 1)
+          echo "file_name=$FILE" >> $GITHUB_OUTPUT
+
+      - name: Upload .vsix to Github Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.get_filename.outputs.file_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

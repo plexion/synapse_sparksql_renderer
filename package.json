@@ -1,0 +1,30 @@
+{
+  "name": "synapse-sparksql-renderer",
+  "displayName": "Synapse SparkSQL Result Renderer",
+  "version": "0.0.1",
+  "publisher": "Alexander Sigurdsson",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "synapse-sparksql-json-renderer",
+        "displayName": "Synapse SparkSQL JSON Renderer",
+        "entrypoint": "./out/renderer.js",
+        "mimeTypes": [
+          "application/vnd.synapse.sparksql-result+json"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "build": "esbuild src/renderer.ts --bundle --outfile=out/renderer.js --format=esm --platform=browser --sourcemap=inline",
+    "watch": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "@types/vscode-notebook-renderer": "^1.72.4",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.0"
+  }
+}
