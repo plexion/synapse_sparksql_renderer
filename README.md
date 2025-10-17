@@ -2,20 +2,28 @@
 
 Source code for an extension that renders the result of the MIME-type `application/vnd.synapse.sparksql-result+json` in VS code. This extension allows the viewing of outputs related to PySpark notebooks using the `%%sql` magic command.
 
+### Before:
+A single line of text is displayed as the result.
+
+![Before](./images/before.png)
+
+### After:
+The result is rendered as an interactive table with 20 rows, sticky headers, and resizable columns.
+
+![After](./images/after.png)
+
 ## Latest Release
 
 ### Version 0.2.0
 
 - Added sticky headers
-- Added data type
+- Displays data type in the headers
 - Vertical scrolling for more than 20 rows
 - Resizable column width
 
-## Features
+### Version 0.1.0
 
-- Renders Synapse Spark SQL query results in a user-friendly format.
-- Supports integration with PySpark notebooks.
-- Handles MIME-type `application/vnd.synapse.sparksql-result+json` for seamless output rendering.
+- Displays the data in a non-interactive table
 
 ## Installation
 
