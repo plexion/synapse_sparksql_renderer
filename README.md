@@ -33,7 +33,7 @@ Coming as soon as I get my Azure account restored
 
 ### Option 1: Install Using a Prebuilt `.vsix` File
 
-1. Download the latest `.vsix` file from the [Releases](https://github.com/plexion/synapse-sparksql-renderer/releases) page.
+1. Download the latest `.vsix` file from the [Releases](https://github.com/plexion/synapse_sparksql_renderer/releases) page.
 2. Open Visual Studio Code.
 3. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar or pressing `Ctrl+Shift+X`.
 4. Click on the ellipsis (`...`) in the top-right corner of the Extensions view and select `Install from VSIX...`.
