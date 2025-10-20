@@ -173,41 +173,63 @@ export const activate: ActivationFunction = (context) => {
 function styleTag(): HTMLStyleElement {
   const s = document.createElement('style');
   s.textContent = `
-  :root { color-scheme: light dark; }
   .ssr-root {
+    /* Contain all styles within the renderer */
+    font-family: var(--vscode-editor-font-family, ui-sans-serif, system-ui);
+    font-size: 13px;
+    color: var(--vscode-editor-foreground);
+    background: var(--vscode-notebook-cellEditorBackground, var(--vscode-editor-background));
+    /* Prevent style leaking */
+    all: initial;
+    display: block;
+    box-sizing: border-box;
+    /* Allow VS Code theme variables to cascade in */
     font-family: var(--vscode-editor-font-family, ui-sans-serif, system-ui);
     font-size: 13px;
     color: var(--vscode-editor-foreground);
   }
+  .ssr-root * {
+    all: unset;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
   .ssr-table-wrap {
-    overflow-x: auto;       /* always allow horizontal scroll for wide tables */
-    overflow-y: visible;    /* becomes auto if >20 rows (set in JS) */
+    overflow-x: auto;
+    overflow-y: visible;
     border: 1px solid var(--vscode-editorWidget-border, #4443);
     border-radius: 4px;
+    background: var(--vscode-notebook-cellEditorBackground, var(--vscode-editor-background));
+    margin: 0.5em 0;
   }
-  table.ssr-table {
+  .ssr-root table.ssr-table {
     border-collapse: collapse;
-    width: max-content;   /* shrink to content, but not less than 100% */
+    width: max-content;
     min-width: 100%;
+    background: var(--vscode-notebook-cellEditorBackground, var(--vscode-editor-background));
   }
-  .ssr-th, .ssr-td {
+  .ssr-root .ssr-th, .ssr-root .ssr-td {
     border: 1px solid var(--vscode-editorWidget-border, #4443);
     padding: 6px 8px;
     text-align: left;
     vertical-align: top;
     position: relative;
+    background: var(--vscode-notebook-cellEditorBackground, var(--vscode-editor-background));
+    color: var(--vscode-editor-foreground);
   }
-  thead .ssr-th {
+  .ssr-root thead .ssr-th {
     background: var(--vscode-editor-inactiveSelectionBackground, #00000010);
     position: sticky;
     top: 0;
     z-index: 2;
     white-space: nowrap;
+    color: var(--vscode-editor-foreground);
   }
-  .ssr-th-title {
+  .ssr-root .ssr-th-title {
     font-weight: 600;
   }
-  .ssr-th-type {
+  .ssr-root .ssr-th-type {
     display: inline-block;
     margin-left: 6px;
     font-size: 11px;
@@ -217,8 +239,9 @@ function styleTag(): HTMLStyleElement {
     border: 1px solid var(--vscode-editorWidget-border, #4443);
     border-radius: 3px;
     padding: 1px 4px;
+    color: var(--vscode-editor-foreground);
   }
-  .ssr-resizer {
+  .ssr-root .ssr-resizer {
     position: absolute;
     right: 0; top: 0;
     width: 6px; height: 100%;
@@ -226,11 +249,11 @@ function styleTag(): HTMLStyleElement {
     user-select: none;
     touch-action: none;
   }
-  tbody tr:nth-child(even) {
-    background: color-mix(in srgb, var(--vscode-editor-background) 90%, var(--vscode-editor-foreground) 10%);
+  .ssr-root tbody tr:nth-child(even) {
+    background: var(--vscode-notebook-cellAlternateBackground, var(--vscode-editor-background));
   }
-  .ssr-td {
-    white-space: nowrap;  /* prevent huge multi-line cells by default */
+  .ssr-root .ssr-td {
+    white-space: nowrap;
   }
   `;
   return s;

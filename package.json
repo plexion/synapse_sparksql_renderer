@@ -1,10 +1,10 @@
 {
   "name": "synapse-sparksql-renderer",
   "displayName": "Synapse SparkSQL Result Renderer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "plexion",
-  "author": "Alexander Sigurdsson"
-  "icon": "images/icon.svg",
+  "author": "Alexander Sigurdsson",
+  "icon": "images/Icon.png",
   "license": "MIT",
   "description": "A VS Code extension to render Synapse SparkSQL query results in notebooks.",
   "categories": [
