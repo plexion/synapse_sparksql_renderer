@@ -14,14 +14,18 @@ The result is rendered as an interactive table with 20 rows, sticky headers, and
 
 ## Latest Release
 
-### Version 0.2.0
+### Version 0.3
+
+- Improved readability across all color themes
+
+### Version 0.2
 
 - Added sticky headers
 - Displays data type in the headers
 - Vertical scrolling for more than 20 rows
 - Resizable column width
 
-### Version 0.1.0
+### Version 0.1
 
 - Displays the data in a non-interactive table
 
