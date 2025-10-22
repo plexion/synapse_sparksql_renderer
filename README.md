@@ -5,12 +5,12 @@ Source code for an extension that renders the result of the MIME-type `applicati
 ### Before:
 A single line of text is displayed as the result.
 
-![Before](./images/before.png)
+![Before](https://github.com/plexion/synapse_sparksql_renderer/blob/main/images/before.png)
 
 ### After:
 The result is rendered as an interactive table with 20 rows, sticky headers, and resizable columns.
 
-![After](./images/after.png)
+![After](https://github.com/plexion/synapse_sparksql_renderer/blob/main/images/after.png)
 
 ## Latest Release
 

@@ -250,7 +250,7 @@ function styleTag(): HTMLStyleElement {
     touch-action: none;
   }
   .ssr-root tbody tr:nth-child(even) {
-    background: var(--vscode-notebook-cellAlternateBackground, var(--vscode-editor-background));
+    background: var(--vscode-notebook-cellAlternateBackground, #f3f3f3);
   }
   .ssr-root .ssr-td {
     white-space: nowrap;
