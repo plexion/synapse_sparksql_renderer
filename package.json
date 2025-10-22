@@ -2,7 +2,7 @@
   "name": "synapse-sparksql-renderer",
   "displayName": "Synapse SparkSQL Result Renderer",
   "version": "0.3.0",
-  "publisher": "plexion",
+  "publisher": "alexanderns",
   "author": "Alexander Sigurdsson",
   "icon": "images/Icon.png",
   "license": "MIT",
@@ -10,8 +10,8 @@
   "categories": [
     "Notebooks",
     "Visualization",
-    "Other",
-    "Data Engineering"
+    "Data Science",
+    "Other"
   ],
   "keywords": [
     "vscode",
